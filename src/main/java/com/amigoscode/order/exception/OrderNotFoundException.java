@@ -1,6 +1,6 @@
 package com.amigoscode.order.exception;
 
-// Exercise: 5 - Create this exception class:
+// TODO: 5 - Create this exception class:
 //  - Extend RuntimeException
 //  - Add @ResponseStatus(HttpStatus.NOT_FOUND) annotation
 //  - Add a constructor that takes a Long id and passes "Order not found with id: " + id to super()

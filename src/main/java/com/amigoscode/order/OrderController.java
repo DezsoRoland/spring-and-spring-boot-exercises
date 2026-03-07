@@ -43,7 +43,7 @@ public class OrderController {
         return ResponseEntity.ok(orderService.getAllOrders());
     }
 
-    // Exercise: 2 - Add @Valid annotation before the @RequestBody parameter
+    // TODO: 2 - Add @Valid annotation before the @RequestBody parameter
     //  to trigger bean validation on CreateOrderRequest
     //  Hint: import jakarta.validation.Valid
     @PostMapping
@@ -76,11 +76,11 @@ public class OrderController {
         return ResponseEntity.notFound().build();
     }
 
-    // Exercise: 15 - Inject the property app.order.max-items using @Value
+    // TODO: 15 - Inject the property app.order.max-items using @Value
     //  Create a GET endpoint "/api/v1/orders/max-items" that returns the value
     //  Hint: @Value("${app.order.max-items}")
 
-    // Exercise: 17 - Replace all System.out.println statements in this class with Logger
+    // TODO: 17 - Replace all System.out.println statements in this class with Logger
     //  private static final Logger log = LoggerFactory.getLogger(OrderController.class);
     //  Use log.info() for normal operations, log.warn() for not found, log.error() for failures
 

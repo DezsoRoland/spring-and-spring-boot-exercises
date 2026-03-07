@@ -1,6 +1,6 @@
 package com.amigoscode.post;
 
-// Exercise: 14 - Create a REST client to call the jsonplaceholder API:
+// TODO: 14 - Create a REST client to call the jsonplaceholder API:
 //  - Create a RestClient bean or use RestClient.create("https://jsonplaceholder.typicode.com")
 //  - Add a method getPosts() that calls GET /posts and returns List<Post>
 //  - Add a method getPostById(Long id) that calls GET /posts/{id} and returns Post
