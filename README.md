@@ -1,65 +1,39 @@
-# Amigoscode Spring Boot Exercises
+# Spring Boot - Exercises
 
-Guided hands-on exercises for the Spring Boot learning path on
+Hands-on exercises for the **Spring Boot** course on
 [Amigoscode Academy](https://skool.com/amigoscode).
 
-## Tech Stack
+## What You'll Practice
 
-- Java 25
-- Spring Boot 4
-- H2 In-Memory Database
-- Maven
+- Defining JPA entities
+- Creating repositories
+- Building CRUD REST endpoints (GET, POST, DELETE)
 
-## Courses
+## Exercises (6 TODOs)
 
-This repository contains exercises for the following courses:
+| # | Topic |
+|---|-------|
+| 1 | Define the `Book` entity |
+| 2 | Create `BookRepository` |
+| 3 | GET all books |
+| 4 | GET book by ID |
+| 5 | POST a new book |
+| 6 | DELETE a book by ID |
 
-| Branch | Course | TODOs |
-|--------|--------|-------|
-| `spring-framework-exercises` | Spring Framework | 5 |
-| `spring-boot-exercises` | Spring Boot | 6 |
-| `spring-data-jpa-exercises` | Spring Data JPA | 25 |
-| `building-apis-with-spring-boot-exercises` | Building APIs with Spring Boot | 20 |
-| `advanced-spring-boot-exercises` | Advanced Spring Boot | 20 |
+## Getting Started
 
-Each course has a matching `-solutions` branch with completed code.
+1. Open the project in IntelliJ IDEA
+2. Open the TODO tool window: **View > Tool Windows > TODO**
+3. Start at TODO 1 and work your way through
+4. Access H2 console at: http://localhost:8080/h2-console
 
-## How to Use
+## Solutions
 
-1. Pick a course and checkout the exercises branch:
-   ```bash
-   git checkout spring-boot-exercises
-   ```
-2. Open the project in IntelliJ IDEA
-3. Open the TODO tool window: **View > Tool Windows > TODO**
-4. Follow the TODOs in order - each one builds on the previous
-5. Stuck? Check the solutions branch:
-   ```bash
-   git checkout spring-boot-solutions
-   ```
-
-## How TODOs Work
-
-Every exercise is marked with a numbered TODO comment:
-
-```java
-// TODO: 1 - Create a GET endpoint mapped to "/api/v1/books"
-//  that returns all books from the database
+```bash
+git checkout spring-boot-solutions
 ```
-
-IntelliJ will list all TODOs in order so you can work through them step by step.
-
-## Prerequisites
-
-Each course builds on the previous. We recommend this order:
-
-1. Spring Framework
-2. Spring Boot
-3. Spring Data JPA
-4. Building APIs with Spring Boot
-5. Advanced Spring Boot
 
 ## Community
 
-Join the [Amigoscode Academy](https://skool.com/amigoscode) to get help,
-share your progress, and connect with other learners.
+Join the [Amigoscode Academy](https://skool.com/amigoscode) to get help
+and share your progress.
