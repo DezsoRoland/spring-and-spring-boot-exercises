@@ -1,7 +1,13 @@
 package com.amigoscode.order;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.time.LocalDate;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Order {
 
     private Long id;
@@ -9,7 +15,12 @@ public class Order {
     private String status;
     private double totalAmount;
     private String customerEmail;
+
+    @JsonProperty("order_date")
+    @JsonFormat(pattern = "dd-MM-yyyy")
     private LocalDate orderDate;
+
+    @JsonIgnore
     private String internalNotes;
 
     public Order() {
@@ -26,71 +37,19 @@ public class Order {
         this.internalNotes = internalNotes;
     }
 
-    // TODO: 14 - Add @JsonProperty("order_date") to the orderDate field
-    //  so it appears as "order_date" in the JSON response
-    //  Hint: look at how Customer uses @JsonProperty
-
-    // TODO: 15 - Add @JsonIgnore to the internalNotes field
-    //  so it is hidden from the JSON response
-    //  Hint: look at how Customer uses @JsonIgnore
-
-    // TODO: 16 - Add @JsonFormat(pattern = "dd-MM-yyyy") to the orderDate field
-    //  Add @JsonInclude(JsonInclude.Include.NON_NULL) to the class
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public double getTotalAmount() {
-        return totalAmount;
-    }
-
-    public void setTotalAmount(double totalAmount) {
-        this.totalAmount = totalAmount;
-    }
-
-    public String getCustomerEmail() {
-        return customerEmail;
-    }
-
-    public void setCustomerEmail(String customerEmail) {
-        this.customerEmail = customerEmail;
-    }
-
-    public LocalDate getOrderDate() {
-        return orderDate;
-    }
-
-    public void setOrderDate(LocalDate orderDate) {
-        this.orderDate = orderDate;
-    }
-
-    public String getInternalNotes() {
-        return internalNotes;
-    }
-
-    public void setInternalNotes(String internalNotes) {
-        this.internalNotes = internalNotes;
-    }
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
+    public String getDescription() { return description; }
+    public void setDescription(String description) { this.description = description; }
+    public String getStatus() { return status; }
+    public void setStatus(String status) { this.status = status; }
+    public double getTotalAmount() { return totalAmount; }
+    public void setTotalAmount(double totalAmount) { this.totalAmount = totalAmount; }
+    public String getCustomerEmail() { return customerEmail; }
+    public void setCustomerEmail(String customerEmail) { this.customerEmail = customerEmail; }
+    public LocalDate getOrderDate() { return orderDate; }
+    public void setOrderDate(LocalDate orderDate) { this.orderDate = orderDate; }
+    public String getInternalNotes() { return internalNotes; }
+    public void setInternalNotes(String internalNotes) { this.internalNotes = internalNotes; }
 
 }
