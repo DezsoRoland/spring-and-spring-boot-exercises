@@ -1,15 +1,22 @@
 package com.amigoscode.book;
 
-// TODO: 1 - Make this class a JPA entity by:
-//  - Adding @Entity annotation
-//  - Adding @Id and @GeneratedValue(strategy = GenerationType.IDENTITY) to the id field
-//  - Adding a no-arg constructor (required by JPA)
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class Book {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
     private String author;
     private int year;
+
+    public Book() {
+    }
 
     public Book(String title, String author, int year) {
         this.title = title;
