@@ -1,11 +1,16 @@
 package com.amigoscode.greeting;
 
-// TODO: 1 - Annotate this class with @Component so Spring manages it as a bean
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
+@Component
 public class GreetingService {
 
     private final String greeting;
 
-    public GreetingService(String greeting) {
+    public GreetingService(@Qualifier("greetingMessage") String greeting) {
         this.greeting = greeting;
     }
 
@@ -13,9 +18,14 @@ public class GreetingService {
         return greeting + ", " + name + "!";
     }
 
-    // TODO: 4 - Add a method annotated with @PostConstruct that prints
-    //  "GreetingService has been initialized"
-    //  Add a method annotated with @PreDestroy that prints
-    //  "GreetingService is being destroyed"
+    @PostConstruct
+    public void init() {
+        System.out.println("GreetingService has been initialized");
+    }
+
+    @PreDestroy
+    public void destroy() {
+        System.out.println("GreetingService is being destroyed");
+    }
 
 }

@@ -7,12 +7,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class GreetingController {
 
-    // TODO: 2 - Inject GreetingService into this controller using constructor injection
+    private final GreetingService greetingService;
+
+    public GreetingController(GreetingService greetingService) {
+        this.greetingService = greetingService;
+    }
 
     @GetMapping("/api/v1/greetings/{name}")
     public String greet(@PathVariable String name) {
-        // TODO: 2 - Use the injected GreetingService to return a greeting
-        return "not yet implemented";
+        return greetingService.greet(name);
     }
 
 }

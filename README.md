@@ -1,36 +1,36 @@
-# Spring Framework - Exercises
+# Spring Boot - Exercises
 
-Hands-on exercises for the **Spring Framework** course on
+Hands-on exercises for the **Spring Boot** course on
 [Amigoscode Academy](https://skool.com/amigoscode).
 
 ## What You'll Practice
 
-- Dependency Injection and Inversion of Control
-- Creating beans with `@Component` and `@Bean`
-- Constructor injection
-- Bean lifecycle hooks (`@PostConstruct`, `@PreDestroy`)
-- Stereotype annotations (`@Service`, `@Repository`)
+- Defining JPA entities
+- Creating repositories
+- Building CRUD REST endpoints (GET, POST, DELETE)
 
-## Exercises (5 TODOs)
+## Exercises (6 TODOs)
 
 | # | Topic |
 |---|-------|
-| 1 | Create a bean with `@Component` |
-| 2 | Constructor injection |
-| 3 | Create a bean with `@Bean` and `@Qualifier` |
-| 4 | Lifecycle hooks |
-| 5 | Stereotype annotations and wiring |
+| 1 | Define the `Book` entity |
+| 2 | Create `BookRepository` |
+| 3 | GET all books |
+| 4 | GET book by ID |
+| 5 | POST a new book |
+| 6 | DELETE a book by ID |
 
 ## Getting Started
 
 1. Open the project in IntelliJ IDEA
 2. Open the TODO tool window: **View > Tool Windows > TODO**
 3. Start at TODO 1 and work your way through
+4. Access H2 console at: http://localhost:8080/h2-console
 
 ## Solutions
 
 ```bash
-git checkout spring-framework-solutions
+git checkout spring-boot-solutions
 ```
 
 ## Community
