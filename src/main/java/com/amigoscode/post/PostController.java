@@ -1,10 +1,27 @@
 package com.amigoscode.post;
 
-// TODO: 14 - Create a PostController:
-//  - @RestController with @RequestMapping("/api/v1/posts")
-//  - Inject PostClient
-//  - GET /api/v1/posts — returns all posts from jsonplaceholder
-//  - GET /api/v1/posts/{id} — returns a single post
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/v1/posts")
 public class PostController {
+
+    private final PostClient postClient;
+
+    public PostController(PostClient postClient) {
+        this.postClient = postClient;
+    }
+
+    @GetMapping
+    public List<Post> getAllPosts() {
+        return postClient.getPosts();
+    }
+
+    @GetMapping("/{id}")
+    public Post getPostById(@PathVariable Long id) {
+        return postClient.getPostById(id);
+    }
 
 }

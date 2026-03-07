@@ -13,6 +13,7 @@ spring:
     hibernate:
       ddl-auto: create-drop
     show-sql: true
+    defer-datasource-initialization: true
 server:
   port: 8080
 
@@ -20,12 +21,11 @@ app:
   order:
     max-items: 10
 
-# TODO: 18 - Add actuator configuration:
-#  management:
-#    endpoints:
-#      web:
-#        exposure:
-#          include: health,info,metrics
-#    info:
-#      env:
-#        enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  info:
+    env:
+      enabled: true

@@ -4,17 +4,17 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
 
-// TODO: 9 - Convert this class to a JPA entity:
-//  - Add @Entity annotation
-//  - Add @Table(name = "orders") — "order" is a reserved SQL keyword
-//  - Add @Id and @GeneratedValue(strategy = GenerationType.IDENTITY) to id
-//  - Add a no-arg constructor (already exists)
+@Entity
+@Table(name = "orders")
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Order {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String description;
     private String status;
