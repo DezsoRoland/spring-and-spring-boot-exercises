@@ -1,64 +1,70 @@
-# Spring Framework - Exercises
+# Spring Boot - Exercises
 
-Hands-on exercises for the **Spring Framework** course on
+Hands-on exercises for the **Spring Boot** course on
 [Amigoscode Academy](https://skool.com/amigoscode).
 
 ## What You'll Practice
 
-- Dependency Injection and Inversion of Control
-- Creating beans with `@Component` and `@Bean`
-- Constructor injection
-- Bean lifecycle hooks (`@PostConstruct`, `@PreDestroy`)
-- Stereotype annotations (`@Service`, `@Repository`)
+- Defining JPA entities
+- Creating repositories
+- Building CRUD REST endpoints (GET, POST, DELETE)
 
 ## Getting Started
 
 1. Open the project in IntelliJ IDEA
 2. Open the TODO tool window: **View > Tool Windows > TODO**
 3. Follow the exercises below in order
+4. Access H2 console at: http://localhost:8080/h2-console
 
 ## Exercises
 
-### TODO: 01 - Create a bean with `@Component`
-**File:** `greeting/GreetingService.java`
+### TODO: 01 - Define the Book entity
+**File:** `book/Book.java`
 
-Annotate `GreetingService` with `@Component` so Spring manages it as a bean.
-
----
-
-### TODO: 02 - Inject GreetingService using constructor injection
-**File:** `greeting/GreetingController.java`
-
-Add a `private final GreetingService` field and inject it via the constructor. Use it in the `greet()` method to return `greetingService.greet(name)`.
+Make this class a JPA entity:
+- Add `@Entity` annotation to the class
+- Add `@Id` and `@GeneratedValue(strategy = GenerationType.IDENTITY)` to the `id` field
+- Add a no-arg constructor (required by JPA)
 
 ---
 
-### TODO: 03 - Define a String bean with `@Bean` and `@Qualifier`
-**File:** `greeting/GreetingConfig.java`
+### TODO: 02 - Create BookRepository
+**File:** `book/BookRepository.java`
 
-Create a `@Bean("greetingMessage")` method that returns `"Hello"`. Then in `GreetingService`, add `@Qualifier("greetingMessage")` to the `String` constructor parameter.
-
----
-
-### TODO: 04 - Add lifecycle hooks
-**File:** `greeting/GreetingService.java`
-
-Add a method annotated with `@PostConstruct` that prints `"GreetingService has been initialized"`. Add a method annotated with `@PreDestroy` that prints `"GreetingService is being destroyed"`.
+Create an interface that extends `JpaRepository<Book, Long>`. You don't need to add any methods — `JpaRepository` provides them all.
 
 ---
 
-### TODO: 05 - Use stereotype annotations and wiring
-**Files:** `user/UserRepository.java` and `user/UserService.java`
+### TODO: 03 - GET all books
+**File:** `book/BookController.java`
 
-- Annotate `UserRepository` with `@Repository`
-- Annotate `UserService` with `@Service`
-- Inject `UserRepository` into `UserService` via constructor injection
-- Use the injected repository in `getAllUsers()` to return `userRepository.findAllUsers()`
+Inject `BookRepository` via constructor injection. Create a `@GetMapping` endpoint mapped to `"/api/v1/books"` that returns `bookRepository.findAll()`.
+
+---
+
+### TODO: 04 - GET book by ID
+**File:** `book/BookController.java`
+
+Create a `@GetMapping` endpoint mapped to `"/api/v1/books/{id}"`. Use `@PathVariable Long id` and `bookRepository.findById(id)`. Return 404 if the book is not found.
+
+---
+
+### TODO: 05 - POST a new book
+**File:** `book/BookController.java`
+
+Create a `@PostMapping` endpoint mapped to `"/api/v1/books"`. Accept a `@RequestBody Book` and save it with `bookRepository.save(book)`.
+
+---
+
+### TODO: 06 - DELETE a book by ID
+**File:** `book/BookController.java`
+
+Create a `@DeleteMapping` endpoint mapped to `"/api/v1/books/{id}"`. Use `@PathVariable Long id` and `bookRepository.deleteById(id)`.
 
 ## Solutions
 
 ```bash
-git checkout spring-framework-solutions
+git checkout spring-boot-solutions
 ```
 
 ## Community
