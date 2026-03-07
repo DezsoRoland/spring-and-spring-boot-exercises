@@ -1,6 +1,6 @@
 package com.amigoscode.book;
 
-// Exercise: 1 - Make this class a JPA entity by:
+// TODO: 01 - Make this class a JPA entity by:
 //  - Adding @Entity annotation
 //  - Adding @Id and @GeneratedValue(strategy = GenerationType.IDENTITY) to the id field
 //  - Adding a no-arg constructor (required by JPA)
