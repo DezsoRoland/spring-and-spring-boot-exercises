@@ -7,6 +7,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.time.LocalDate;
 
+// TODO: 9 - Convert this class to a JPA entity:
+//  - Add @Entity annotation
+//  - Add @Table(name = "orders") — "order" is a reserved SQL keyword
+//  - Add @Id and @GeneratedValue(strategy = GenerationType.IDENTITY) to id
+//  - Add a no-arg constructor (already exists)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Order {
 
