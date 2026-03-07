@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.time.LocalDate;
 
-// TODO: 9 - Convert this class to a JPA entity:
+// Exercise: 9 - Convert this class to a JPA entity:
 //  - Add @Entity annotation
 //  - Add @Table(name = "orders") — "order" is a reserved SQL keyword
 //  - Add @Id and @GeneratedValue(strategy = GenerationType.IDENTITY) to id

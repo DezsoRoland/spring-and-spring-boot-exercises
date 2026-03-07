@@ -20,7 +20,7 @@ app:
   order:
     max-items: 10
 
-# TODO: 18 - Add actuator configuration:
+# Exercise: 18 - Add actuator configuration:
 #  management:
 #    endpoints:
 #      web:

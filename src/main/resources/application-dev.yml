@@ -1,4 +1,4 @@
-# TODO: 16 - Create a dev profile configuration:
+# Exercise: 16 - Create a dev profile configuration:
 #  app:
 #    order:
 #      max-items: 100

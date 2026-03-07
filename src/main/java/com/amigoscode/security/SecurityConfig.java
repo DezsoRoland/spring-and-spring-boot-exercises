@@ -1,6 +1,6 @@
 package com.amigoscode.security;
 
-// TODO: 19 - Create a SecurityFilterChain bean:
+// Exercise: 19 - Create a SecurityFilterChain bean:
 //  - Annotate this class with @Configuration and @EnableWebSecurity
 //  - Create a @Bean method that returns SecurityFilterChain
 //  - Configure HTTP Basic authentication
@@ -20,7 +20,7 @@ package com.amigoscode.security;
 //            .build();
 //    }
 
-// TODO: 20 - Create an in-memory user:
+// Exercise: 20 - Create an in-memory user:
 //  - Create a @Bean method that returns UserDetailsService
 //  - Use User.builder() to create a user with username "admin", password "password", role "ADMIN"
 //  - Use BCryptPasswordEncoder to encode the password

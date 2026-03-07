@@ -1,6 +1,6 @@
 package com.amigoscode.order.validation;
 
-// TODO: 4 - Create a custom validation annotation @ValidOrderStatus:
+// Exercise: 4 - Create a custom validation annotation @ValidOrderStatus:
 //  - @Constraint(validatedBy = OrderStatusValidator.class)
 //  - @Target({ElementType.FIELD})
 //  - @Retention(RetentionPolicy.RUNTIME)
