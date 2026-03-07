@@ -1,8 +1,8 @@
 package com.amigoscode.course;
 
 import com.amigoscode.student.Student;
-
 import jakarta.persistence.*;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -16,9 +16,8 @@ public class Course {
     @Column(nullable = false)
     private String name;
 
-    // TODO: 18 - Add the other side of the many-to-many relationship:
-    //  private Set<Student> students = new HashSet<>();
-    //  @ManyToMany(mappedBy = "courses")
+    @ManyToMany(mappedBy = "courses")
+    private Set<Student> students = new HashSet<>();
 
     public Course() {
     }
@@ -43,6 +42,8 @@ public class Course {
         this.name = name;
     }
 
-    // TODO: 18 - Add getter for students
+    public Set<Student> getStudents() {
+        return students;
+    }
 
 }
