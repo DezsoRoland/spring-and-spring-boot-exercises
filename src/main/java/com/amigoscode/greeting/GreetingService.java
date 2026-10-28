@@ -6,6 +6,11 @@ package com.amigoscode.greeting;
 
 // TODO: 04 - Add @PostConstruct and @PreDestroy lifecycle hooks
 
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
+import org.springframework.stereotype.Component;
+
+@Component
 public class GreetingService {
 
     private final String greeting;
@@ -16,6 +21,16 @@ public class GreetingService {
 
     public String greet(String name) {
         return greeting + ", " + name + "!";
+    }
+
+    @PostConstruct
+    public void init(){
+        System.out.println("GreetingService has been initialized");
+    }
+
+    @PreDestroy
+    public void destroy(){
+        System.out.println("GreetingService is being destroyed");
     }
 
 }
